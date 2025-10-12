@@ -7,3 +7,47 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: var(--font-family);
+}
+
+h1 {
+    text-align: center;
+    padding: 2rem;
+}
+
+.calc-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: gray;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+.calc-section .display {
+    background-color: aliceblue;
+    border-radius: 0.5rem;
+    grid-column: 1 / -1;
+    padding: 1rem;
+}
+
+.calc-section button {
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
