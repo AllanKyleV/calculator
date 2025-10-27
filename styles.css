@@ -33,7 +33,7 @@ main {
     box-shadow: -10px 10px 15px darkgray;
 }
 
-.display {
+#display {
     background-color: white;
     padding: 2rem;
     margin: 1.75rem 0 0 0;
