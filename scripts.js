@@ -1,56 +1,38 @@
-// Select variables
+// Selecting Variables
+// Display
+const display = document.querySelector('#calc-display');
 
-// Display screen
-const display = document.querySelector('#display');
+// Calculator buttons
+const calcButtons = Array.from(document.querySelectorAll('.calc-btn'));
 
-// Number buttons
-const numberButtons = document.querySelectorAll('.number')
 
-// Operators
-const operators = Array.from(document.querySelectorAll('#btn-divide, #btn-multiply, #btn-subtract, #btn-add, #btn-decimal, #btn-equals'));
-
-// Functions
-function operate(firstNum, operators, secondNum) {
-    switch (operators) {
-        case 'add':
+// Function to operate
+function operate(firstNum, operation, secondNum) {
+    switch (operation) {
+        case 'addition':
             return firstNum + secondNum;
-
-        case 'subtract':
+        case 'subraction':
             return firstNum - secondNum;
-
-        case 'multiply':
+        case 'multiplication':
             return firstNum * secondNum;
-
-        case 'divide':
+        case 'division':
             return firstNum / secondNum;
     };
 }
 
-// A function that populate the display when you click the digit buttons.
-function populateNumbers(numberButtons) {
-    numberButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            if (display.value === '0' || display.value === '') {
-                display.value = btn.textContent;
-            } else {
-                display.value += btn.textContent;
-            }
+// Function to populate the display with clicked buttons
+function populate(calcButtons) {
+    calcButtons.forEach(button => {
+        button.addEvenListener('click', () => {
+            
+            // To be continue...
         });
     });
 }
 
-populateNumbers(numberButtons);
 
-// Goal: When button is click, the display is filled with numbers/operators.
+// Logic: Get the first number, if an operation is clicked that number becames value of a. get the second number, if eaqual is hit b equals to that number, then return a operation b. If another operation is hit, a = a opeartion b.
 
-// Practice DOM
-const title = document.querySelector('h1');
-const user = ''
-
-// title.textContent = 'Hello';
-// title.textContent = user === '' ? 'Hello Guest' : `Hello ${user}`;
-// title.style = 'color: maroon';
-
-// A function that calculates, if number is clicked add the number variable as string, if an operator is clicked, use that operator then proceed to another variabe... This may work, but not the same as regular calculator. The calculator follows the PEMDAS method.
-
-// Let's try another one.
+// Pseudocode:
+// Start, Function to operate(firstNum, operation, secondNum)
+// Use switch, case opration is add

@@ -5,7 +5,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;   
+    box-sizing: border-box;
 }
 
 body {
@@ -20,36 +20,43 @@ h1 {
 main {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.container {
+main .container {
     background-color: gray;
-    width: 23rem;
-    border-radius: 0.75rem;
-    padding: 2rem;
+    width: 25rem;
+    padding: 1.75rem 1.75rem 3rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    box-shadow: -10px 10px 15px darkgray;
+    gap: 0.5rem ;
+    border-radius: 1rem;
 }
 
-#display {
-    background-color: white;
-    padding: 2rem;
-    margin: 1.75rem 0 0 0;
-    border-radius: 0.75rem;
+#calc-display {
     grid-column: 1 / 5;
-    border: solid black 2px;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: none;
+    font-size: 1.5rem;
+    text-align: right;
+    margin: 1rem 0 2rem;
 }
 
 button {
-    padding: 1.3rem;
-    border-radius: 1.3rem;
-    cursor: pointer;
-    border: solid black 2px;
-    font-weight: 600;
+    padding: 1rem;
+    border-radius: 0.8rem;
+    border: none;
+    font-family: var(--main-font);
+    font-size: 1.2rem;
+}
+
+.calc-btn:nth-child(-1) {
+    grid-column: 4 / 5;
 }
 
 button:hover {
-    background-color: lightgray;
+    cursor: pointer;
+    background-color: orangered;
+    color: white;
 }
