@@ -1,4 +1,4 @@
-// Elements.
+// Selecting Elements.
 
 // Display.
 const display = document.querySelector("#calc-display");
@@ -9,6 +9,9 @@ const numberButtons = document.querySelectorAll(".numbers");
 // All operation buttons.
 const operationButtons = document.querySelectorAll(".operations");
 // Equals.
+const clearButton = document.querySelector("#clear");
+// Decimals.
+const decimal = document.querySelector("#decimal");
 
 // Calculate.
 function operate(num1, num2, operation) {
@@ -23,3 +26,26 @@ function operate(num1, num2, operation) {
             return num1 / num2;
     }
 }
+
+// Update the dispaly by number buttons.    
+numberButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        
+        // No zero's at first.
+        if (display.value === "0") {
+            display.value = button.textContent;
+        } else {
+            display.value += button.textContent;
+        }
+    });
+});
+
+clearButton.addEventListener("click", () => {
+    display.value = "0";
+});
+
+decimal.addEventListener("click", () => {
+    if (!display.value.includes(".")) {
+        display.value += ".";
+    }
+});
