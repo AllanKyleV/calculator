@@ -40,12 +40,25 @@ numberButtons.forEach(button => {
     });
 });
 
+// Clear button.
 clearButton.addEventListener("click", () => {
     display.value = "0";
 });
 
+// Decimal points.
 decimal.addEventListener("click", () => {
     if (!display.value.includes(".")) {
         display.value += ".";
     }
+});
+
+// Operations
+operationButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        if (display.value === "0") {
+            display.value = "0";
+        } else {
+            display.value += button.textContent;
+        }
+    });
 });
